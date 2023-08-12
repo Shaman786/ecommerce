@@ -1,5 +1,4 @@
-import { Button, Grid, Typography } from "@mui/material";
-import Link from "@mui/material";
+import { Button, Grid, Typography, Link } from "@mui/material";
 
 const Footer = () => {
   return (
@@ -14,23 +13,23 @@ const Footer = () => {
             Company
           </Typography>
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               About
             </Button>
           </div>
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               Blog
             </Button>
           </div>
 
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               Press
             </Button>
           </div>
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               Career
             </Button>
           </div>
@@ -40,28 +39,28 @@ const Footer = () => {
             Solutions
           </Typography>
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               Marketing
             </Button>
           </div>
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               Analytics
             </Button>
           </div>
 
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               Commerce
             </Button>
           </div>
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               Insights
             </Button>
           </div>
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               Support
             </Button>
           </div>
@@ -71,12 +70,12 @@ const Footer = () => {
             Documentation
           </Typography>
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               Guides
             </Button>
           </div>
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               API Status
             </Button>
           </div>
@@ -86,25 +85,25 @@ const Footer = () => {
             Legal
           </Typography>
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               Claim
             </Button>
           </div>
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               Privacy
             </Button>
           </div>
 
           <div>
-            <Button className="pb-5" gutterBottom variant="h6">
+            <Button className="pb-5" variant="h6">
               Terms
             </Button>
           </div>
         </Grid>
         <Grid className="pt-20" item xs={12}>
           <Typography variant="body2" component="p" align="center">
-            &copy; 2023 My Company. All rights reserved.
+            &copy; {new Date().getFullYear()} My Company. All rights reserved.
           </Typography>
           <Typography variant="body2" component="p" align="center">
             Icons made by{""}

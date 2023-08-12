@@ -4,8 +4,7 @@ import HomeSectionCard from "../HomeSectionCard/HomeSectionCard.jsx";
 import { Button } from "@mui/material";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { useState } from "react";
-import { mens_kurta } from "../../../assets/Men/men_kurta.js";
-
+import PropTypes from "prop-types";
 const HomeSectionCarousel = ({ data, sectionName }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const responsive = {
@@ -13,6 +12,31 @@ const HomeSectionCarousel = ({ data, sectionName }) => {
     720: { items: 3 },
     1024: { items: 5.5 },
   };
+    HomeSectionCarousel.propTypes = {
+        data: PropTypes.arrayOf(
+            PropTypes.shape({
+                imageUrl: PropTypes.string.isRequired,
+                brand: PropTypes.string.isRequired,
+                title: PropTypes.string.isRequired,
+                color: PropTypes.string.isRequired,
+                discountedPrice: PropTypes.number.isRequired,
+                price: PropTypes.number.isRequired,
+                discountPercent: PropTypes.number.isRequired,
+                size: PropTypes.arrayOf(
+                    PropTypes.shape({
+                        name: PropTypes.string.isRequired,
+                        quantity: PropTypes.number.isRequired,
+                    })
+                ).isRequired,
+                quantity: PropTypes.number.isRequired,
+                topLavelCategory: PropTypes.string.isRequired,
+                secondLavelCategory: PropTypes.string.isRequired,
+                thirdLavelCategory: PropTypes.string.isRequired,
+                description: PropTypes.string.isRequired,
+            })
+        ).isRequired,
+        sectionName: PropTypes.string.isRequired,
+    };
 
   const slidePrev = () => setActiveIndex(activeIndex - 1);
   const slideNext = () => setActiveIndex(activeIndex + 1);
@@ -20,7 +44,7 @@ const HomeSectionCarousel = ({ data, sectionName }) => {
   const syncActiveIndex = ({ item }) => setActiveIndex(item);
   const items = data
     .slice(0, 10)
-    .map((item) => <HomeSectionCard product={item} />);
+    .map((item,index) => <HomeSectionCard key={index} product={item} />);
   return (
     <div className=" border">
       <h2 className="text-2xl font-extrabold text-gray-800 py-5">

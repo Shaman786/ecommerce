@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const HomeSectionCard = ({ product }) => {
   return (
     <div className="cursor-pointer flex flex-col items-center bg-white rounded-lg shadow-lg overflow-hidden w-[15rem] mx-3  border">
@@ -17,3 +19,25 @@ const HomeSectionCard = ({ product }) => {
 };
 
 export default HomeSectionCard;
+HomeSectionCard.propTypes = {
+    product: PropTypes.shape({
+        imageUrl: PropTypes.string.isRequired,
+        brand: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        color: PropTypes.string.isRequired,
+        discountedPrice: PropTypes.number.isRequired,
+        price: PropTypes.number.isRequired,
+        discountPercent: PropTypes.number.isRequired,
+        size: PropTypes.arrayOf(
+            PropTypes.shape({
+                name: PropTypes.string.isRequired,
+                quantity: PropTypes.number.isRequired,
+            })
+        ).isRequired,
+        quantity: PropTypes.number.isRequired,
+        topLavelCategory: PropTypes.string.isRequired,
+        secondLavelCategory: PropTypes.string.isRequired,
+        thirdLavelCategory: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+    }).isRequired,
+};
